@@ -1,0 +1,72 @@
+/**
+ * @fileOverview
+ * @author Crow
+ * @version 0.0.1
+ * @time 2015/10/27
+ */
+
+@maxSpacing       :       120;
+@margin           :       4;
+@mgtb             :       4;
+@mglr             :       4;
+/*-----------margin setting----------*/
+
+.margin(@n, @i: 0) when (@i =< @n) {
+  .mg@{i}{
+    margin: unit(@i, px) !important;
+  }
+  .margin(@n, (@i + @margin));
+}
+
+.mgtb(@n, @i: 0) when (@i =< @n) {
+  .mgtb@{i}{
+    margin-top: unit(@i, px) !important;
+    margin-bottom: unit(@i, px) !important;
+  }
+  .mgtb(@n, (@i + @mgtb));
+}
+
+.mglr(@n, @i: 0) when (@i =< @n) {
+  .mglr@{i}{
+    margin-left: unit(@i, px) !important;
+    margin-right: unit(@i, px) !important;
+  }
+  .mglr(@n, (@i + @mglr));
+}
+
+.mgt(@n, @i: 0) when (@i =< @n) {
+  .mgt@{i}{
+    margin-top: unit(@i, px) !important;
+  }
+  .mgt(@n, (@i + @mglr));
+}
+
+.mgb(@n, @i: 0) when (@i =< @n) {
+  .mgb@{i}{
+    margin-bottom: unit(@i, px) !important;
+  }
+  .mgb(@n, (@i + @mglr));
+}
+
+.mgl(@n, @i: 0) when (@i =< @n) {
+  .mgl@{i}{
+    margin-left: unit(@i, px) !important;
+  }
+  .mgl(@n, (@i + @mglr));
+}
+
+.mgr(@n, @i: 0) when (@i =< @n) {
+  .mgr@{i}{
+    margin-right: unit(@i, px) !important;
+  }
+  .mgr(@n, (@i + @mglr));
+}
+
+.margin(@maxSpacing);
+.mgtb(@maxSpacing);
+.mglr(@maxSpacing);
+
+.mgt(@maxSpacing);
+.mgb(@maxSpacing);
+.mgr(@maxSpacing);
+.mgl(@maxSpacing);
